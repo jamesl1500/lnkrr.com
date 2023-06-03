@@ -1,0 +1,208 @@
+/**
+* Global variables
+* --------------------------------------------------
+*/
+/**
+* Global styles
+* --------------------------------------------------
+*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  font-family: "Geologica", sans-serif;
+  font-weight: 400;
+  color: #1b1b1b;
+  background-color: #fafafa;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/**
+* Layout
+* --------------------------------------------------
+*/
+.website {
+  min-width: 100vw;
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+.website-hold {
+  padding-top: 175px;
+  padding-bottom: 100px;
+}
+
+/**
+* Header
+* --------------------------------------------------
+*/
+.header-hold {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  padding: 40px 10px;
+}
+
+.header {
+  padding: 16px 24px;
+  background: #ffffff;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 500px;
+}
+.header .header_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .header_inner .header_logo a {
+  text-decoration: none;
+}
+.header .header_inner .header_logo a img {
+  border-radius: 50%;
+  display: inline-block;
+  width: 50px;
+}
+.header .header_inner .header_logo a h4 {
+  color: #1b1b1b;
+  display: inline-block;
+  padding-left: 16px;
+  padding-top: 8px;
+  margin-bottom: 0px;
+  position: relative;
+  top: 3px;
+}
+.header .header_inner .header_nav ul li.active {
+  border-bottom: 2px solid #1b1b1b;
+}
+.header .header_inner .header_nav ul li.active a {
+  color: #1b1b1b;
+}
+.header .header_inner .header_nav ul li {
+  display: inline-block;
+  margin-right: 25px;
+  padding-top: 8px;
+  position: relative;
+  top: 3px;
+}
+.header .header_inner .header_nav ul li a {
+  font-weight: 700;
+  color: #aaaaaa;
+  text-decoration: none;
+}
+
+/**
+* Hero
+* --------------------------------------------------
+*/
+.hero {
+  padding: 16px 24px;
+}
+.hero .hero_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero .hero_inner .hero_content {
+  max-width: 500px;
+}
+.hero .hero_inner .hero_content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+.hero .hero_inner .hero_content p {
+  margin-bottom: 16px;
+}
+.hero .hero_inner .hero_content .hero_btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #1b1b1b;
+  color: #ffffff;
+  border-radius: 500px;
+  text-decoration: none;
+}
+.hero .hero_inner .hero_img img {
+  width: 100%;
+}
+
+/**
+* Page
+* --------------------------------------------------
+*/
+.page {
+  padding: 24px 16px;
+}
+.page .page_top {
+  padding-bottom: 32px;
+}
+.page .page_top h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+}
+.page .page_content .page_analytics {
+  padding: 24px 24px;
+  background: white;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+}
+.page .page_content .page_analytics .page_analytics_top {
+  padding-bottom: 24px;
+  display: none;
+}
+.page .page_content .page_analytics .page_analytics_top h4 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+  color: #aaaaaa;
+}
+.page .page_content .page_analytics .page_analytics_content {
+  padding-top: 24px;
+}
+.page .page_content .page_analytics .page_analytics_content .page_analytics_content_row h3 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.page .page_content .page_analytics .page_analytics_content .page_analytics_content_row h2 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+  text-align: center;
+}

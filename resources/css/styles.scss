@@ -1,0 +1,338 @@
+/**
+* Global variables
+* --------------------------------------------------
+*/
+
+// Colors
+$background: #fafafa;
+$lighter-background: #ffffff;
+
+$font-color: #1b1b1b;
+$font-light-color: #aaaaaa;
+
+// Fonts
+$font-family: 'Geologica', sans-serif;
+
+// Font sizes
+$font-size: 16px;
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+
+// Line heights
+$line-height: 1.5;
+
+// Border radius
+$border-radius: 10px;
+$border-radius-circle: 50%;
+$border-radius-pill: 500px;
+
+// Box shadow
+$box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.08);
+
+// Breakpoints
+$breakpoint-xs: 0px;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Spacing
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 48px;
+$spacing-xxl: 64px;
+
+// Z-index
+$z-index-1: 100;
+$z-index-2: 200;
+$z-index-3: 300;
+$z-index-4: 400;
+$z-index-5: 500;
+$z-index-6: 600;
+$z-index-7: 700;
+$z-index-8: 800;
+$z-index-9: 900;
+$z-index-10: 1000;
+
+/**
+* Global styles
+* --------------------------------------------------
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+body {
+  font-family: $font-family;
+  font-weight: $font-weight-regular;
+  color: $font-color;
+  background-color: $background;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  margin-top: 0;
+  margin-bottom: $spacing-sm;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+/**
+* Layout
+* --------------------------------------------------
+*/
+.website{
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background: $background;
+}
+
+.website-hold{
+    padding-top: 175px;
+    padding-bottom: 100px;
+}
+
+/**
+* Header
+* --------------------------------------------------
+*/
+.header-hold{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: $z-index-2;
+
+    padding: 40px 10px;
+}
+
+.header{
+    padding: $spacing-sm $spacing-md;
+
+    background: $lighter-background;
+    box-shadow: $box-shadow;
+
+    border-radius: $border-radius-pill;
+
+    .header_inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .header_logo{
+
+            a{
+                text-decoration: none;
+
+                img{
+                    border-radius: $border-radius-circle;
+                    display: inline-block;
+
+                    width: 50px;
+                }
+
+                h4{
+                    color: $font-color;
+                    display: inline-block;
+
+                    padding-left: $spacing-sm;
+                    padding-top: $spacing-xs;
+
+                    margin-bottom: 0px;
+
+                    position: relative;
+                    top: 3px;
+                }
+            }
+        }
+
+        .header_nav{
+
+            ul{
+
+                li.active{
+                    border-bottom: 2px solid $font-color;
+
+                    a{
+                        color: $font-color;
+                    }
+                }
+
+                li{
+                    display: inline-block;
+                    margin-right: 25px;
+                    padding-top: $spacing-xs;
+
+                    position: relative;
+                    top: 3px;
+
+                    a{
+                        font-weight: $font-weight-bold;
+                        color: $font-light-color;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+* Hero
+* --------------------------------------------------
+*/
+.hero{
+    padding: $spacing-sm $spacing-md;
+
+    .hero_inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .hero_content{
+            max-width: 500px;
+
+            h1{
+                font-size: 2.5rem;
+                margin-bottom: $spacing-xs;
+            }
+
+            p{
+                margin-bottom: $spacing-sm;
+            }
+
+            .hero_btn{
+                display: inline-block;
+                padding: $spacing-xs $spacing-sm;
+
+                background: $font-color;
+                color: $lighter-background;
+
+                border-radius: $border-radius-pill;
+
+                text-decoration: none;
+            }
+        }
+
+        .hero_img{
+            img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+/**
+* Page
+* --------------------------------------------------
+*/
+.page{
+    padding: $spacing-md $spacing-sm;
+
+    .page_top{
+        padding-bottom: $spacing-lg;
+
+        h1{
+            font-size: 3.5rem;
+            font-weight: $font-weight-light;
+        }
+
+    }
+
+    .page_content{
+
+        .page_analytics{
+            padding: $spacing-md $spacing-md;
+            background: white;
+
+            box-shadow: $box-shadow;
+
+            border-radius: $border-radius;
+
+
+            .page_analytics_top{
+                padding-bottom: $spacing-md;
+                display: none;
+
+                h4{
+                    font-size: 1.5rem;
+                    font-weight: $font-weight-light;
+
+                    margin-bottom: $spacing-xs;
+
+                    color: $font-light-color;
+                }
+            }
+
+            .page_analytics_content{
+                padding-top: $spacing-md;
+
+                .page_analytics_content_row{
+
+                    h3{
+                        font-size: 2rem;
+                        font-weight: $font-weight-light;
+
+                        margin-bottom: $spacing-xs;
+
+                        text-align:center;
+                    }
+
+                    h2{
+                        font-size: 3rem;
+                        font-weight: $font-weight-light;
+
+                        margin-bottom: $spacing-xs;
+
+                        text-align:center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+// Path: resources\css\styles.scss

@@ -11,8 +11,19 @@
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('imgs/lnkrr_black_circle.png') }}" type="image/png">
 
+    <!-- Base URL -->
+    <meta name="base-url" content="{{ url('/') }}">
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- API Token -->
+    <meta name="api-token" content="{{ Auth::user()->api_token }}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/brands.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/solid.css') }}">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +39,13 @@
     <div class="header-hold">
         @include('templates.header')
     </div>
-    <div class="website-hold">
+    <div class="website-hold <?php if($no_padding){?> no-padding <?php } ?>">
         @yield('content')
     </div>
     <div class="footer-hold">
         @include('templates.footer')
     </div>
+    <div id="alert_hold"></div>
 </div>
 
 <!-- Live reload -->
@@ -45,7 +57,7 @@
 <script src="{{ asset('js/jquery.js') }}"></script>
 
 <!-- Bootstrap -->
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('js/scripts.js') }}"></script>

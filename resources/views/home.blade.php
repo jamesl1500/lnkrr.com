@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 @php($page = 'home')
-@section('title', 'Lnkrr | Home')
+@php($title = 'Lnkrr | Home')
 
 @section('content')
     <div class="page container">

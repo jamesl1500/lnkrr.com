@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\MeController;
+use App\Http\Controllers\API\LinksController;
+use App\Http\Controllers\ToController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,13 +30,25 @@ Route::get('/me', function () {
 })->middleware(['auth'])->name('me');
 
 // To: This will be the page where people can view other people's profiles
-Route::get('/to/{id}', function () {
-    return view('to');
-})->middleware(['auth'])->name('to');
+Route::get('/to/{username}',[ToController::class, "index"])->middleware(['auth'])->name('to');
 
 // Settings: This is where people can edit their settings
 Route::get('/settings', function () {
     return view('settings');
 })->middleware(['auth'])->name('settings');
 
+// Settings: This is where people can edit their settings
+Route::post('/me/editProfileForm_BasicInfo', [MeController::class, "update"])->middleware(['auth'])->name('me.editProfileForm_BasicInfo');
+
+// Links: Save new link
+Route::post('/me/editProfileForm_Links', [LinksController::class, "store"])->middleware(['auth'])->name('links.addLink');
 require __DIR__.'/auth.php';
+
+// Link resource
+Route::resource('LinksModel', LinksController::class)->middleware(['auth']);
+
+// Link: Delete link
+Route::delete('/me/editProfileForm_Links/delete/{id}', [LinksController::class, "destroy"])->middleware(['auth'])->name('links.destroy');
+
+// Link: Edit link
+Route::post('/me/editProfileForm_Links/update/{id}', [LinksController::class, "update"])->middleware(['auth'])->name('links.update');

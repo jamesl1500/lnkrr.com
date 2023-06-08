@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\MeController;
 use App\Http\Controllers\API\LinksController;
 use App\Http\Controllers\ToController;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::get('/me', function () {
 })->middleware(['auth'])->name('me');
 
 // To: This will be the page where people can view other people's profiles
-Route::get('/to/{username}',[ToController::class, "index"])->middleware(['auth'])->name('to');
+Route::get('/to/{username}',[ToController::class, "index"])->name('to');
 
 // Settings: This is where people can edit their settings
 Route::get('/settings', function () {
@@ -52,3 +53,5 @@ Route::delete('/me/editProfileForm_Links/delete/{id}', [LinksController::class, 
 
 // Link: Edit link
 Route::post('/me/editProfileForm_Links/update/{id}', [LinksController::class, "update"])->middleware(['auth'])->name('links.update');
+
+// Google login

@@ -1,36 +1,50 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('layouts.guest')
+@php($page = 'forgot-password')
+@php($title = 'Forgot Password | ' . env('APP_NAME') . '')
+@php($no_padding = true)
+@php($description = "Forgot your password? Don't worry we can help you reset it.")
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+@section('content')
+    <div class="page page-login">
+        <div class="page_inner">
+            <div
+                class="page_banner"style="background-image: url(https://images.unsplash.com/photo-1610879068855-4189e55be5c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80)">
+                <div class="page_banner_inner">
+                    <div class="page_banner_content">
+                        <h1>Forgot Password</h1>
+                        <p><?php echo $description; ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="page_content container">
+                <div class="page_content_inner">
+                    <form method="POST" action="{{ route('password.email') }}">
+                        @csrf
+                        <div class="display_errors">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul class="errors_list">
+                                        @foreach ($errors->all() as $error)
+                                            <li><i class="fas fa-exclamation-circle"></i> {{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="form-group">
+                            <label for="email" value="__('Email')">Email</label>
+                            <input id="email" class="block mt-1 w-full" placeholder="Email" type="email"
+                                name="email" value="{{old('email')}}" required autofocus />
+                        </div>
+
+                        <div class="form-group submit">
+                            <input type="submit" class="btn " value="Email Password Reset Link">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+    </div>
+@endsection

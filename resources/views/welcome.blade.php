@@ -30,7 +30,7 @@
                             <p>Login to your account</p>
                         </div>
                         <div class="cont_form">
-                            <form method="POST" action="{{ route('login') }}">
+                            <form method="POST" action="<?php echo env('APP_URL'); ?>/login">
                                 @csrf
                                 <div class="display_errors">
                                     @if ($errors->any())

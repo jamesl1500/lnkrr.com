@@ -18,7 +18,7 @@
             </div>
             <div class="page_content container">
                 <div class="page_content_inner">
-                    <form method="POST" action="{{ route('password.email') }}">
+                    <form method="POST" action="<?php echo env('APP_URL'); ?>/forgot-password">
                         @csrf
                         <div class="display_errors">
                             @if ($errors->any())

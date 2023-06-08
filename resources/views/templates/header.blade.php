@@ -6,7 +6,7 @@
             @else
             <a href="/">
             @endif
-                <img src="{{ asset('imgs/lnkrr_black_circle.png') }}" alt="<?php echo env('APP_NAME'); ?> Logo">
+                <img src="<?php echo env('APP_URL'); ?>/imgs/lnkrr_black_circle.png" alt="<?php echo env('APP_NAME'); ?> Logo">
                 <h4><?php echo env('APP_NAME'); ?></h4>
             </a>
         </div>

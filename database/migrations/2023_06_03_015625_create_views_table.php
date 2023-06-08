@@ -15,8 +15,8 @@ class CreateViewsTable extends Migration
     {
         Schema::create('views', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->default('')->nullable();
-            $table->integer('viewed_user_id')->default('')->nullable();
+            $table->integer('user_id')->default(0)->nullable();
+            $table->integer('viewed_user_id')->default(0)->nullable();
             $table->string('ip_address')->default('')->nullable();
             $table->string('user_agent')->default('')->nullable();
             $table->string('country')->default('')->nullable();

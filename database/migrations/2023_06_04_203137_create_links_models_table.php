@@ -20,10 +20,10 @@ class CreateLinksModelsTable extends Migration
             $table->string('url')->default('')->nullable();
             $table->string('description')->default('')->nullable();
             $table->string('image')->nullable();
-            $table->bigInteger('category')->default('')->nullable();
-            $table->bigInteger('clicks')->default('')->nullable();
-            $table->boolean('is_active')->default('')->nullable();
-            $table->boolean('is_protected')->default('')->nullable();
+            $table->bigInteger('category')->default(0)->nullable();
+            $table->bigInteger('clicks')->default(0)->nullable();
+            $table->boolean('is_active')->default(true)->nullable();
+            $table->boolean('is_protected')->default(false)->nullable();
             $table->string('password')->nullable();
             $table->binary('photo')->nullable();
             $table->string('type')->default('')->nullable();

@@ -12,7 +12,7 @@
     <link rel="icon" href="{{ asset('imgs/lnkrr_black_circle.png') }}" type="image/png">
 
     <!-- Base URL -->
-    <meta name="base-url" content="{{ url('/') }}">
+    <meta name="base-url" content="<?php echo env('APP_URL'); ?>">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

@@ -19,13 +19,13 @@ class CreateLinksModelsTable extends Migration
             $table->string('name')->default('')->nullable();
             $table->string('url')->default('')->nullable();
             $table->string('description')->default('')->nullable();
-            $table->string('image')->default('')->nullable();
+            $table->string('image')->nullable();
             $table->bigInteger('category')->default('')->nullable();
             $table->bigInteger('clicks')->default('')->nullable();
             $table->boolean('is_active')->default('')->nullable();
             $table->boolean('is_protected')->default('')->nullable();
-            $table->string('password')->default('')->nullable();
-            $table->binary('photo')->default('')->nullable();
+            $table->string('password')->nullable();
+            $table->binary('photo')->nullable();
             $table->string('type')->default('')->nullable();
             $table->string('font_family')->default('')->nullable();
             $table->string('font_size')->default('')->nullable();

@@ -15,14 +15,14 @@ class CreateClicksTable extends Migration
     {
         Schema::create('clicks', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('clicked_user_id');
-            $table->string('ip_address');
-            $table->string('user_agent');
-            $table->string('country');
-            $table->string('region');
-            $table->string('city');
-            $table->string('timezone');
+            $table->integer('user_id')->default('')->nullable();
+            $table->integer('clicked_user_id')->default('')->nullable();
+            $table->string('ip_address')->default('')->nullable();
+            $table->string('user_agent')->default('')->nullable();
+            $table->string('country')->default('')->nullable();
+            $table->string('region')->default('')->nullable();
+            $table->string('city')->default('')->nullable();
+            $table->string('timezone')->default('')->nullable();
             $table->timestamp('clicked_at')->useCurrent();
             $table->timestamps();
         });

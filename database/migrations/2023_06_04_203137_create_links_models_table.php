@@ -20,7 +20,7 @@ class CreateLinksModelsTable extends Migration
             $table->string('url');
             $table->string('description');
             $table->string('image');
-            $table->bigInteger('category');
+            $table->bigInteger('category')->;
             $table->bigInteger('clicks');
             $table->boolean('is_active');
             $table->boolean('is_protected');

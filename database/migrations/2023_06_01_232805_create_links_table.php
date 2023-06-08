@@ -32,11 +32,11 @@ class CreateLinksTable extends Migration
             $table->string('font_color')->default('')->nullable();
             $table->string('background_color')->default('')->nullable();
             $table->string('border_color')->default('')->nullable();
-            $table->string('border_radius')->default('')->nullable();;
-            $table->string('border_width')->default('')->nullable();;
-            $table->string('padding')->default('')->nullable();;
-            $table->string('margin')->default('')->nullable();;
-            $table->string('shadow')->default('')->nullable();;
+            $table->string('border_radius')->default('')->nullable();
+            $table->string('border_width')->default('')->nullable();
+            $table->string('padding')->default('')->nullable();
+            $table->string('margin')->default('')->nullable();
+            $table->string('shadow')->default('')->nullable();
             $table->timestamps();
         });
     }

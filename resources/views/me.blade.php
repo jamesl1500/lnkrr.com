@@ -28,7 +28,7 @@
                     <p>This is your unique link page. Customize it to your liking!</p>
                 </div>
                 <div class="inner_edit_forms">
-                    <div class="edit_form" id="edit_form_1">
+                    <div class="edit_form active" id="edit_form_1">
                         <h2>Basic Info</h2>
                         <form action="{{ route('me.editProfileForm_BasicInfo') }}" method="post" enctype="multipart/form-data" id="edit_profile_form">
                             <div class="form-group">
@@ -83,7 +83,7 @@
                             <input type="submit" value="Save Changes" class="btn btn-primary btn-block btn-lg" id="save_changes_btn">
                         </form>
                     </div>
-                    <div class="edit_form active" id="edit_form_2">
+                    <div class="edit_form" id="edit_form_2">
                         <h2>Links</h2>
                         <div class="links_holder">
                             <div class="form-group" id="link_pri_hold">

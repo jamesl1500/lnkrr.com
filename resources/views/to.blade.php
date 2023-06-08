@@ -1,3 +1,34 @@
+<?php
+$links = DB::table('links')->where('user_id', $user->id)->get();
+
+// Insert view for every page view. 1 per IP Address
+if(!isset($_COOKIE['viewed-'.$user->id.'']))
+{
+    // Get IP address user_agent and country
+
+    // Get country
+    $country = isset($ip['country_name']) ? $ip['country_name'] : 'Unknown';
+    $city = isset($ip['city']) ? $ip['city'] : 'Unknown';
+    $region = isset($ip['region']) ? $ip['region'] : 'Unknown';
+    $timezone = isset($ip['timezone']) ? $ip['timezone'] : 'Unknown';
+
+    // Insert view
+    DB::table('views')->insert([
+        'user_id' => Auth::user()->id ? Auth::user()->id : $_SERVER['REMOTE_ADDR'],
+        'viewed_user_id' => $user->id,
+        'ip_address' => $_SERVER['REMOTE_ADDR'],
+        'country' => $country ? $country : 'Unknown',
+        'user_agent' => $_SERVER['HTTP_USER_AGENT'] ? $_SERVER['HTTP_USER_AGENT'] : 'Unknown',
+        'region' => $region ? $region : 'Unknown',
+        'city' => $city ? $city : 'Unknown',
+        'timezone' => $timezone ? $timezone : 'Unknown',
+        'created_at' => date('Y-m-d H:i:s')
+    ]);
+
+    // Set cookie
+    setcookie('viewed-' . $user->id, 'true', time() + (86400 * 30), "/");
+}
+?>
 @extends('layouts.auth')
 @php($page = 'to')
 @php($title = ''.$user->name.' | ' . env('APP_NAME') . '')
@@ -16,20 +47,25 @@
                     <div class="profile_info">
                         <h3><?php echo $user->name; ?></h3>
                         <p>URL: <?php echo $user->url; ?></p>
-                        <p class="bio"><?php echo $user->bio; ?></p>
                     </div>
                     <div class="profile_stats">
                         <div class="profile_stat">
-                            <h3>100</h3>
-                            <p>Links</p>
+                            <h3><?php echo count($links); ?></h3>
+                            <p><?php echo (count($links) == 1) ? 'Link' : 'Links'; ?></p>
                         </div>
                         <div class="profile_stat">
-                            <h3>100</h3>
-                            <p>Views</p>
+                            <?php
+                            $views = DB::table('views')->where('viewed_user_id', $user->id)->get();
+                            ?>
+                            <h3><?php echo count($views); ?></h3>
+                            <p><?php echo (count($views) == 1) ? 'View' : 'Views'; ?></p>
                         </div>
                         <div class="profile_stat">
-                            <h3>100</h3>
-                            <p>Clicks</p>
+                            <?php
+                            $clicks = DB::table('clicks')->where('user_id', $user->id)->get();
+                            ?>
+                            <h3><?php echo count($clicks); ?></h3>
+                            <p><?php echo (count($clicks) == 1) ? 'Click' : 'Clicks'; ?></p>
                         </div>
                     </div>
                 </div>
@@ -39,10 +75,17 @@
     <div class="profile_links_main_area container col-lg-7">
         <div class="left_blank_area"></div>
         <div class="middle_links_area">
+            <div class="top_links">
+                <div class="inner_links">
+                    <?php foreach(unserialize($user->bio_links) as $link){ ?>
+                        <a title="<?php echo $link; ?>" href="<?php echo $link; ?>" class="btn pill sm" target="_blank"><i class="fa-regular fa-link"></i> <?php echo $link; ?></a>
+                    <?php } ?>
+                </div>
+            </div>
+            <p class="bio"><?php echo $user->bio; ?></p>
             <h2>Links</h2>
             <ul class="links_area">
                 <?php
-                $links = DB::table('links')->where('user_id', Auth::user()->id)->get();
 
                 // Loop through links and display them
                 if(count($links) > 0)

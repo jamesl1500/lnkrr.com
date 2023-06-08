@@ -677,15 +677,40 @@ li {
 * Page
 * --------------------------------------------------
 */
-.page {
-  padding: 24px 16px;
+.page .page-banner {
+  height: 400px;
+  background-size: cover;
+  display: flex;
+}
+.page .page-banner .page-banner-cover {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page .page-banner .page-banner-cover .page-banner-content {
+  text-align: center;
+}
+.page .page-banner .page-banner-cover .page-banner-content h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 300;
+}
+.page .page-banner .page-banner-cover .page-banner-content p {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 .page .page_top {
   padding-bottom: 32px;
+  margin-top: -150px;
 }
 .page .page_top h1 {
   font-size: 3.5rem;
   font-weight: 300;
+  color: white;
 }
 .page .page_content .page_analytics {
   padding: 24px 24px;
@@ -717,6 +742,50 @@ li {
   font-weight: 300;
   margin-bottom: 8px;
   text-align: center;
+}
+.page .page_content .links_hold h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.page .page_content .links_hold p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.page .page_content .links_hold ul.links_area li {
+  list-style: none;
+  padding: 16px 16px;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+}
+.page .page_content .links_hold ul.links_area li a {
+  display: flex;
+}
+.page .page_content .links_hold ul.links_area li a .image {
+  height: 50px;
+  width: 50px;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+  margin-right: 16px;
+}
+.page .page_content .links_hold ul.links_area li a .link_info h5 {
+  margin: 0px;
+}
+.page .page_content .links_hold ul.links_area li a .link_info p {
+  font-size: 12px;
+  color: #9c9c9c;
+  margin: 0px;
+}
+.page .page_content .links_hold ul.links_area li a .link_info:last-child {
+  border-bottom: none;
+}
+.page .page_content .links_hold ul.links_area li a .link_info a {
+  text-decoration: none;
 }
 
 .edit_profile_page {
@@ -913,7 +982,7 @@ li {
   display: flex;
   justify-content: left;
   position: relative;
-  top: 400px;
+  top: 420px;
 }
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_pic {
   width: 200px;
@@ -935,15 +1004,6 @@ li {
   color: white;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-.profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_info p.bio {
-  font-size: 18px;
-  background: white;
-  padding: 16px;
-  border-radius: 10px;
-  color: #1b1b1b;
-  margin-top: 25px;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
-}
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_stats {
   float: right;
   margin-left: auto;
@@ -956,14 +1016,40 @@ li {
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_stats .profile_stat h3 {
   margin-bottom: 0px;
   color: white;
+  text-align: center;
+  font-weight: 200;
 }
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_stats .profile_stat p {
+  text-align: center;
   margin-bottom: 0px;
   color: white;
 }
 .profile_page .profile_links_main_area {
+  position: relative;
+  z-index: 1;
   padding: 0px;
-  padding-top: 100px;
+  padding-top: 20px;
+}
+@media screen and (max-width: 990px) {
+  .profile_page .profile_links_main_area {
+    padding-top: 150px;
+  }
+}
+.profile_page .profile_links_main_area .middle_links_area {
+  margin-left: -5px;
+}
+.profile_page .profile_links_main_area .middle_links_area p.bio {
+  font-size: 18px;
+  padding: 0 0;
+  border-radius: 10px;
+  color: #1b1b1b;
+  margin-top: 25px;
+}
+@media screen and (max-width: 990px) {
+  .profile_page .profile_links_main_area .middle_links_area p.bio {
+    width: 65%;
+    position: absolute;
+  }
 }
 .profile_page .profile_links_main_area .middle_links_area ul.links_area li {
   list-style: none;

@@ -1454,9 +1454,15 @@ li {
                     .profile_pic {
                         width: 200px;
 
-                        img {
-                            border-radius: $border-radius-circle;
+                        .img {
+                            background-size: cover;
+                            background-position: center center;
+                            border-radius: $border-radius;
                             box-shadow: $box-shadow;
+                            height: 200px;
+                            max-height: 200px;
+                            width: 200px;
+                            display: inline-block;
                         }
                     }
 

@@ -56,6 +56,14 @@
                                 value="{{old('name')}}" required autofocus placeholder="Name"/>
                         </div>
 
+                        <!-- URL -->
+                        <div class="form-group">
+                            <label for="url" :value="__('Url')">URL</label>
+
+                            <input id="url" class="block mt-1 w-full" type="text" name="url"
+                                value="{{old('url')}}" required placeholder="URL"/>
+                        </div>
+
                         <!-- Email Address -->
                         <div class="form-group">
                             <label for="email" value="__('Email')">Email</label>
@@ -74,16 +82,6 @@
                             <label for="password_confirmation" :value="__('Confirm Password')">Confirm Password</label>
 
                             <input id="password_confirmation" placeholder="Confirm Password" class="block mt-1 w-full" type="password" name="password_confirmation" required />
-                        </div>
-
-                        <!-- Remember Me -->
-                        <div class="form-group">
-                            <label for="remember_me" class="inline-flex items-center">
-                                <input id="remember_me" type="checkbox"
-                                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                    name="remember">
-                                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                            </label>
                         </div>
 
                         <div class="form-group submit">

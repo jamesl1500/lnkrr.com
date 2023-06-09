@@ -16,6 +16,7 @@
                 @if(Auth::check())
                     <li class="{{ $page == 'home' ? 'active' : '' }}"><a href="{{ route('home')}}">Home</a></li>
                     <li class="{{ $page == 'me' ? 'active' : '' }}"><a href="{{ route('me')}}">Me</a></li>
+                    <li class="{{ $page == 'to' ? 'active' : '' }}"><a href="{{ route('to', Auth::user()->url)}}">Profile</a></li>
                     <li><a href="{{ route('logout') }}">Logout</a></li>
                 @else
                     <li class="{{ $page == 'login' ? 'active' : '' }}"><a href="{{ route('login')}}">Login</a></li>

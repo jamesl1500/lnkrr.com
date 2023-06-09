@@ -42,7 +42,7 @@ if(!isset($_COOKIE['viewed-'.$user->id.'']))
             <div class="bottom_profile_main container">
                 <div class="inner_bottom_profile_main">
                     <div class="profile_pic">
-                        <img src="data:image;base64,<?php echo $user->profile_pic; ?>" alt="Profile Picture">
+                        <div class="img" style="background-image: url(data:image;base64,<?php echo $user->profile_pic; ?>);" alt="Profile Picture"></div>
                     </div>
                     <div class="profile_info">
                         <h3><?php echo $user->name; ?></h3>

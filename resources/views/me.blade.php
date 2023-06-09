@@ -17,8 +17,8 @@
                     <ul>
                         <li data-toggle="tooltip" data-placement="top" title="Basic Info" class="profile_edit_link active" data-open='1'><i class="fa-regular fa-circle-user"></i></li>
                         <li data-toggle="tooltip" data-placement="top" title="Links" class="profile_edit_link" data-open='2'><i class="fa-solid fa-list"></i></li>
-                        <li data-toggle="tooltip" data-placement="top" title="Edit Design" class="profile_edit_link" data-open='3'><i class="fa-solid fa-paintbrush"></i></li>
-                        <li data-toggle="tooltip" data-placement="top" title="Donations" class="profile_edit_link" data-open='4'><i class="fa-solid fa-credit-card"></i></li>
+                        <!-- <li data-toggle="tooltip" data-placement="top" title="Edit Design" class="profile_edit_link" data-open='3'><i class="fa-solid fa-paintbrush"></i></li>
+                        <li data-toggle="tooltip" data-placement="top" title="Donations" class="profile_edit_link" data-open='4'><i class="fa-solid fa-credit-card"></i></li> -->
                     </ul>
                 </div>
             </div>

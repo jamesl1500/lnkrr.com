@@ -592,11 +592,6 @@ li {
 * Footer
 * --------------------------------------------------
 */
-.footer-hold {
-  position: fixed;
-  bottom: 0px;
-}
-
 .footer {
   background: rgba(0, 0, 0, 0.4);
   color: white;
@@ -607,12 +602,22 @@ li {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 450px) {
+  .footer .inner_footer {
+    display: block;
+  }
+}
 .footer .inner_footer .copyright {
   text-align: left;
   padding-top: 20px;
 }
 .footer .inner_footer .footer_links {
   text-align: right;
+}
+@media screen and (max-width: 450px) {
+  .footer .inner_footer .footer_links {
+    display: none;
+  }
 }
 .footer .inner_footer .footer_links ul {
   padding: 0px;
@@ -1051,8 +1056,22 @@ li {
   position: relative;
   top: 420px;
 }
+@media screen and (max-width: 450px) {
+  .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main {
+    display: block;
+    position: inherit;
+  }
+}
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_pic {
   width: 200px;
+}
+@media screen and (max-width: 450px) {
+  .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_pic {
+    width: 150px;
+    margin: auto auto;
+    position: inherit;
+    padding-top: 150px;
+  }
 }
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_pic .img {
   background-size: cover;
@@ -1064,27 +1083,70 @@ li {
   width: 200px;
   display: inline-block;
 }
+@media screen and (max-width: 450px) {
+  .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_pic .img {
+    width: 150px;
+    height: 150px;
+    margin: auto auto;
+    position: inherit;
+  }
+}
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_info {
   padding-left: 34px;
+}
+@media screen and (max-width: 450px) {
+  .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_info {
+    width: 100%;
+    margin: auto auto;
+    position: inherit;
+    padding-top: 20px;
+    padding-left: 0px;
+  }
 }
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_info h3 {
   margin-bottom: 0px;
   color: white;
   text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
 }
+@media screen and (max-width: 450px) {
+  .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_info h3 {
+    text-align: center;
+  }
+}
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_info p {
   margin-bottom: 0px;
   color: white;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 450px) {
+  .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_info p {
+    text-align: center;
+  }
 }
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_stats {
   float: right;
   margin-left: auto;
   display: flex;
 }
+@media screen and (max-width: 450px) {
+  .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_stats {
+    float: none;
+    justify-content: space-around;
+    width: 100%;
+    margin: auto auto;
+    position: inherit;
+    padding-top: 20px;
+    padding-left: 0px;
+  }
+}
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_stats .profile_stat {
   width: 50px;
   margin-left: 25px;
+}
+@media screen and (max-width: 450px) {
+  .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_stats .profile_stat {
+    margin-left: 0px;
+  }
 }
 .profile_page .profile_banner .profile_banner_cover .bottom_profile_main .inner_bottom_profile_main .profile_stats .profile_stat h3 {
   margin-bottom: 0px;
@@ -1108,8 +1170,35 @@ li {
     padding-top: 150px;
   }
 }
+@media screen and (max-width: 450px) {
+  .profile_page .profile_links_main_area {
+    padding-top: 0px;
+  }
+}
 .profile_page .profile_links_main_area .middle_links_area {
   margin-left: -5px;
+}
+@media screen and (max-width: 450px) {
+  .profile_page .profile_links_main_area .middle_links_area h2 {
+    display: none;
+  }
+  .profile_page .profile_links_main_area .middle_links_area .top_links .inner_links {
+    width: 100%;
+    position: inherit;
+    margin: auto auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    background: white;
+    padding: 10px 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+    width: 90vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .profile_page .profile_links_main_area .middle_links_area .top_links .inner_links a span {
+    display: none;
+  }
 }
 .profile_page .profile_links_main_area .middle_links_area p.bio {
   font-size: 18px;
@@ -1118,10 +1207,32 @@ li {
   color: #1b1b1b;
   margin-top: 25px;
 }
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 450px) {
+  .profile_page .profile_links_main_area .middle_links_area p.bio {
+    width: 100%;
+    position: inherit;
+    margin: auto auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    text-align: center;
+    background: white;
+    padding: 10px 0px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+    width: 90vw;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 990px) and (min-width: 451px) {
   .profile_page .profile_links_main_area .middle_links_area p.bio {
     width: 65%;
     position: absolute;
+  }
+}
+@media screen and (max-width: 450px) {
+  .profile_page .profile_links_main_area .middle_links_area ul.links_area {
+    padding: 20px;
   }
 }
 .profile_page .profile_links_main_area .middle_links_area ul.links_area li {

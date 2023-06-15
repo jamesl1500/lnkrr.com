@@ -9,9 +9,10 @@
     <meta name="keywords" content="{{ $keywords ?? 'Lnkrr, link, shortener, free, custom, track, links' }}">
 
     <!-- API Token -->
-    <meta name="api-token" content="{{ Auth::user()->api_token }}">
-    <meta name="user-id" content="{{ Auth::user()->id }}">
-
+    <?php if(Auth::check()){ ?>
+        <meta name="api-token" content="{{ Auth::user()->api_token }}">
+        <meta name="user-id" content="{{ Auth::user()->id }}">
+    <?php } ?>
     <!-- Favicon -->
     <link rel="icon" href="<?php echo env('APP_URL'); ?>/imgs/lnkrr_black_circle.png" type="image/png">
 
@@ -34,6 +35,10 @@
     <!-- Bootstrap -->
     <link href="<?php echo env('APP_URL'); ?>/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo env('APP_URL'); ?>/css/styles.css" rel="stylesheet">
+
+    <!-- Google Ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2085234864180580"
+     crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="website">

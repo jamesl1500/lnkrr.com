@@ -802,8 +802,7 @@ li {
 * --------------------------------------------------
 */
 .footer-hold{
-    position: fixed;
-    bottom: 0px;
+
 }
 
 .footer{
@@ -813,6 +812,9 @@ li {
     width: 100vw;
 
     .inner_footer{
+        @media screen and (max-width: 450px) {
+            display: block;
+        }
         display: flex;
         justify-content: space-between;
 
@@ -822,6 +824,9 @@ li {
         }
 
         .footer_links{
+            @media screen and (max-width: 450px) {
+                display: none;
+            }
             text-align: right;
 
             ul{
@@ -1445,6 +1450,11 @@ li {
             .bottom_profile_main {
 
                 .inner_bottom_profile_main {
+                    @media screen and (max-width: 450px) {
+                        display: block;
+                        position: inherit;
+                    }
+
                     display: flex;
                     justify-content: left;
 
@@ -1452,9 +1462,23 @@ li {
                     top: 420px;
 
                     .profile_pic {
+                        @media screen and (max-width: 450px) {
+                            width: 150px;
+                            margin: auto auto;
+                            position: inherit;
+
+                            padding-top: 150px;
+                        }
+
                         width: 200px;
 
                         .img {
+                            @media screen and (max-width: 450px) {
+                                width: 150px;
+                                height: 150px;
+                                margin: auto auto;
+                                position: inherit;
+                            }
                             background-size: cover;
                             background-position: center center;
                             border-radius: $border-radius;
@@ -1467,15 +1491,28 @@ li {
                     }
 
                     .profile_info {
+                        @media screen and (max-width: 450px) {
+                            width: 100%;
+                            margin: auto auto;
+                            position: inherit;
+                            padding-top: 20px;
+                            padding-left: 0px;
+                        }
                         padding-left: calc($spacing-md + 10px);
 
                         h3 {
+                            @media screen and (max-width: 450px) {
+                                text-align: center;
+                            }
                             margin-bottom: 0px;
                             color: white;
                             text-shadow: $box-shadow;
                         }
 
                         p {
+                            @media screen and (max-width: 450px) {
+                                text-align: center;
+                            }
                             margin-bottom: 0px;
                             color: white;
                             text-shadow: $text-shadow;
@@ -1483,15 +1520,27 @@ li {
                     }
 
                     .profile_stats {
+                        @media screen and (max-width: 450px) {
+                            float: none;
+                            justify-content: space-around;
+                            width: 100%;
+                            margin: auto auto;
+                            position: inherit;
+                            padding-top: 20px;
+                            padding-left: 0px;
+                        }
                         float: right;
                         margin-left: auto;
 
                         display: flex;
 
                         .profile_stat {
+                            @media screen and (max-width: 450px) {
+                                margin-left: 0px;
+                            }
+
                             width: 50px;
                             margin-left: 25px;
-
 
                             h3 {
                                 margin-bottom: 0px;
@@ -1519,6 +1568,10 @@ li {
             padding-top: 150px;
         }
 
+        @media screen and (max-width: 450px) {
+            padding-top: 0px;
+        }
+
         position: relative;
         z-index: 1;
 
@@ -1528,8 +1581,69 @@ li {
         .middle_links_area {
             margin-left: -5px;
 
+            @media screen and (max-width: 450px) {
+                h2{
+                    display: none;
+                }
+            }
+
+            .top_links{
+
+                .inner_links{
+                    @media screen and (max-width: 450px) {
+                        width: 100%;
+                        position: inherit;
+                        margin: auto auto;
+                        padding-left: 0px;
+                        padding-right: 0px;
+    
+                        background: white;
+    
+                        padding: 10px 10px;
+                        border-radius: $border-radius;
+    
+                        box-shadow: $box-shadow;
+    
+                        width: 90vw;
+    
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+
+                    a{
+
+                        span{
+                            @media screen and (max-width: 450px) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
             p.bio {
-                @media screen and (max-width: 990px) {
+                @media screen and (max-width: 450px) {
+                    width: 100%;
+                    position: inherit;
+                    margin: auto auto;
+                    padding-left: 0px;
+                    padding-right: 0px;
+
+                    text-align: center;
+                    background: white;
+
+                    padding: 10px 0px;
+                    border-radius: $border-radius;
+
+                    box-shadow: $box-shadow;
+
+                    width: 90vw;
+
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+
+                @media screen and (max-width: 990px) and (min-width: 451px) {
                     width: 65%;
                     position: absolute;
                 }
@@ -1545,6 +1659,9 @@ li {
             }
 
             ul.links_area {
+                @media screen and (max-width: 450px) {
+                    padding: 20px;
+                }
 
                 li {
                     list-style: none;

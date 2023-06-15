@@ -75,14 +75,14 @@ if(!isset($_COOKIE['viewed-'.$user->id.'']))
     <div class="profile_links_main_area container col-lg-7">
         <div class="left_blank_area"></div>
         <div class="middle_links_area">
+            <p class="bio"><?php echo $user->bio; ?></p>
             <div class="top_links">
                 <div class="inner_links">
                     <?php foreach(unserialize($user->bio_links) as $link){ ?>
-                        <a title="<?php echo $link; ?>" href="<?php echo $link; ?>" class="btn pill sm" target="_blank"><i class="fa-regular fa-link"></i> <?php echo $link; ?></a>
+                        <a title="<?php echo $link; ?>" href="<?php echo $link; ?>" class="btn pill sm" target="_blank"><i class="fa-regular fa-link"></i> <span><?php echo $link; ?></span></a>
                     <?php } ?>
                 </div>
             </div>
-            <p class="bio"><?php echo $user->bio; ?></p>
             <h2>Links</h2>
             <ul class="links_area">
                 <?php

@@ -5,8 +5,8 @@
         </div>
         <div class="footer_links">
             <ul>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="{{ route('terms')}}">Terms of Service</a></li>
+                <li><a href="{{ route('privacy')}}">Privacy Policy</a></li>
             </ul>
         </div>
     </div>

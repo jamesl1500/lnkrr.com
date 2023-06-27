@@ -21,6 +21,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// About
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+// Privacy
+Route::get('/privacy', function () {
+    return view('privacy');
+})->name('privacy');
+
+// Terms
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');
+
 Route::get('/home', function () {
     return view('home');
 })->middleware(['auth'])->name('home');

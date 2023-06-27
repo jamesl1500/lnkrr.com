@@ -19,6 +19,7 @@
                     <li class="{{ $page == 'to' ? 'active' : '' }}"><a href="{{ route('to', Auth::user()->url)}}">Profile</a></li>
                     <li><a href="{{ route('logout') }}">Logout</a></li>
                 @else
+                    <li class="{{ $page == 'about' ? 'active' : '' }}"><a href="{{ route('about')}}">About</a></li>
                     <li class="{{ $page == 'login' ? 'active' : '' }}"><a href="{{ route('login')}}">Login</a></li>
                     <li class="{{ $page == 'register' ? 'active' : '' }}"><a href="{{ route('register')}}">Register</a></li>
                 @endif

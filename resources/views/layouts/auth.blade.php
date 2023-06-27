@@ -18,6 +18,7 @@
 
     <!-- Base URL -->
     <meta name="base-url" content="<?php echo env('APP_URL'); ?>">
+    <base href="<?php echo env('APP_URL'); ?>/">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

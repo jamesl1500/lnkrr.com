@@ -594,7 +594,7 @@ li {
 * --------------------------------------------------
 */
 .footer-hold {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
 }
 
@@ -1182,12 +1182,21 @@ li {
   }
 }
 .profile_page .profile_links_main_area .middle_links_area {
-  margin-left: -5px;
+  margin-left: 20px;
 }
 @media screen and (max-width: 450px) {
   .profile_page .profile_links_main_area .middle_links_area h2 {
     display: none;
   }
+}
+.profile_page .profile_links_main_area .middle_links_area h2 {
+  margin-top: 20px;
+}
+.profile_page .profile_links_main_area .middle_links_area .top_links {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 20px;
+}
+@media screen and (max-width: 450px) {
   .profile_page .profile_links_main_area .middle_links_area .top_links .inner_links {
     width: 100%;
     position: inherit;

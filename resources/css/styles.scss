@@ -803,7 +803,7 @@ li {
 * --------------------------------------------------
 */
 .footer-hold{
-    position: absolute;
+    position: fixed;
     bottom: 0px;
 }
 
@@ -1581,7 +1581,7 @@ li {
         padding-top: 20px;
 
         .middle_links_area {
-            margin-left: -5px;
+            margin-left: 20px;
 
             @media screen and (max-width: 450px) {
                 h2{
@@ -1589,7 +1589,13 @@ li {
                 }
             }
 
+            h2{
+                margin-top: 20px;
+            }
+
             .top_links{
+                border-bottom: 1px solid rgba(0,0,0,.2);
+                padding-bottom: 20px;
 
                 .inner_links{
                     @media screen and (max-width: 450px) {

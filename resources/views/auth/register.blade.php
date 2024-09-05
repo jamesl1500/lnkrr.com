@@ -31,7 +31,7 @@
                                 </div>
                             @endif
                         </div>
-                        <div class="login_buttons">
+                        <div class="login_buttons" style="display: none;">
                             <!-- Display One click login buttons -->
                             <a href="{{ url('/auth/redirect/google') }}" class="login_button btn google">
                                 <i class="fab fa-google"></i>

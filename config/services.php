@@ -29,5 +29,13 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
-];
+    
+    'ipinfo' => [
+        'access_token' => '9d3ea774020267',
+    ],
+    'google' => [
+        'client_id' => '855579515428-7sed0ql2a0eefbaffo2f1974ajier8vj.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => '/login/google/callback',
+    ]
+]; 

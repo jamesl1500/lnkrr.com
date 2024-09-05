@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnsToUsersTable extends Migration
+class AddUsernameColumnToUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,8 @@ class AddColumnsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
-            $table->binary('profile_pic');
-            $table->string('font_family');
-            $table->string('bio');
-            $table->binary('background_pic');
-            $table->string('bio_links');
+            // Add username column to users table
+            $table->string('username')->unique()->after('name');
         });
     }
 
